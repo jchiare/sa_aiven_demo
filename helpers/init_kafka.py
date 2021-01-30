@@ -11,7 +11,7 @@ from os import environ
 
 def get_kafka_broker():
     """
-    Parses the KAKFA_URL and returns a hostname: port that kafka - python expects.
+    Parses the KAFKA_URL and returns a hostname: port that kafka - python expects.
     Expects to be stored in environ var as "brokername,port"
     """
     if not environ.get("KAFKA_URL"):
