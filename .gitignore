@@ -3,3 +3,5 @@
 
 # pyenvs
 .python-version
+
+__pycache__
