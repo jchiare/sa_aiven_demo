@@ -17,8 +17,7 @@ def get_kafka_broker():
     if not environ.get("KAFKA_URL"):
         raise RuntimeError("The KAFKA_URL config variable is not set.")
 
-    kafka_url = environ.get("KAFKA_URL").split(",")
-    return "{}:{}".format(kafka_url[0], kafka_url[1])
+    return environ.get("KAFKA_URL")
 
 
 def get_kafka_ssl_info():
