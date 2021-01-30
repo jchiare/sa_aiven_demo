@@ -2,9 +2,25 @@
 
 from helpers.util import get_UTC_time, get_host_name
 from helpers.init_kafka import initialize_kafka_producer
+from argparse import ArgumentParser
+from typing import Text
 
-producer = initialize_kafka_producer()
-producer.send(
-    "sample_topic", {"utc_time": get_UTC_time(), "host_name": get_host_name()}
-)
-producer.flush()  # For send messages
+
+def kafka_producer_service(topic_name: Text):
+    producer = initialize_kafka_producer()
+    producer.send(
+        topic_name, {"utc_time": get_UTC_time(), "host_name": get_host_name()}
+    )
+    producer.flush()  # For send messages
+
+
+def main():
+    parser = ArgumentParser()
+    parser.add_argument("-t", "--topic", help="Kafka topic name", required=True)
+    args = parser.parse_args()
+
+    kafka_producer_service(args.topic)
+
+
+if __name__ == "__main__":
+    main()
