@@ -1,5 +1,5 @@
 from datetime import datetime
-import socket
+from socket import gethostname
 
 
 def get_UTC_time() -> datetime:
@@ -7,4 +7,4 @@ def get_UTC_time() -> datetime:
 
 
 def get_host_name() -> str:
-    return socket.gethostname()
+    return gethostname()
