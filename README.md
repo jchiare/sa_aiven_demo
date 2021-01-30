@@ -1,13 +1,20 @@
 ## Kafka Service 
 
-Open source repo to send JSON data to a Kafka service. Includes instructions to easily set up your DB infrasture (including easy integration with monitoring) with Aiven
+Send JSON messages to a Kafka service by topic
+
+Bonus: Includes instructions to easily add metrics (including easy integration with monitoring) with Aiven
 
 ### Installation intructions & env vars
-
-Tested on Python version `3.9`
+Tested with: 
+* Python version `3.8.0`
+* Kafka `2.6.1`
 
 Environmental variables
-* ``
+* `KAFKA_URL` - host name and port in the following format -- hostname,port
+* `KAFKA_CA` - ca.pem
+* `KAFKA_SERVICE_CERT` - service.cert
+* `KAFKA_SERVICE_KEY` - service.key
+
 
 ### Aiven instructions
 
@@ -24,7 +31,7 @@ Pre steps requirements:
 
 #### Existing libraries used
 
-- [kafka-python](https://github.com/dpkp/kafka-python) client 
+- [kafka-python](https://github.com/dpkp/kafka-python) - Kafka client 
 
 #### Attribution: 
 
