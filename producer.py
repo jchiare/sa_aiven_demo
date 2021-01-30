@@ -8,7 +8,7 @@ from typing import Text
 
 def kafka_producer_service(topic_name: Text):
     producer = initialize_kafka_producer()
-    producer.send(topic_name, {get_host_name(): get_UTC_time()})
+    producer.send(topic_name, {"UTC_time": get_UTC_time()}, get_host_name())
     producer.flush()  # For send messages
 
 

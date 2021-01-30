@@ -56,7 +56,8 @@ def initialize_kafka_producer():
         ssl_cafile=ssl_info["ssl_cafile"],
         ssl_certfile=ssl_info["ssl_certfile"],
         ssl_keyfile=ssl_info["ssl_keyfile"],
-        value_serializer=lambda x: dumps(x).encode("utf-8"),
+        value_serializer=lambda v: dumps(v).encode("utf-8"),
+        key_serializer=lambda k: dumps(k).encode("utf-8"),
     )
 
     return producer
