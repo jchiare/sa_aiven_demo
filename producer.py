@@ -15,7 +15,7 @@ def kafka_producer_service(topic_name: Text):
 
         print("Sending messages to Kafka service")
         producer.send(topic_name, value=message_value, key=message_key)
-        producer.flush()  # Wait until all messages sent
+        producer.flush()  # Wait until all messages have sent
         print("Finished sending messages to Kafka service")
     except Exception as e:
         print(f"Error: {e}")
