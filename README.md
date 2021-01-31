@@ -60,6 +60,7 @@ Aiven help center articles
 * https://help.aiven.io/en/articles/489570-getting-started-with-aiven-influxdb
 * https://help.aiven.io/en/articles/489587-getting-started-with-aiven-grafana
 * https://help.aiven.io/en/articles/1456441-getting-started-with-service-integrations
+* https://github.com/gfrolov/aiven-kafka
 
 #### To do
 * Better logging 
