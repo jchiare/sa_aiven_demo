@@ -29,6 +29,8 @@ python producer.py -t <topic-name>
 **Required:**
 * -t (topic name): Kafka topic name 
 
+## Extra information
+
 ### Aiven instructions
 
 Read on if you'd like to use Aiven DBaaS to help you power your application. Includes easy integration with a lot of monitoring and metric services. This demo uses InfluxDB and Grafana
