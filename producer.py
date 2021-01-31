@@ -7,13 +7,19 @@ from typing import Text
 
 
 def kafka_producer_service(topic_name: Text):
-    producer = initialize_kafka_producer()
+    try:
+        producer = initialize_kafka_producer()
 
-    message_key = get_host_name()
-    message_value = {"UTC_time": get_UTC_time()}
+        message_key = get_host_name()
+        message_value = {"UTC_time": get_UTC_time()}
 
-    producer.send(topic_name, value=message_value, key=message_key)
-    producer.flush()  # Send messages
+        print("Sending messages to Kafka service")
+        producer.send(topic_name, value=message_value, key=message_key)
+        producer.flush()  # Wait until all messages sent
+        print("Finished sending messages to Kafka service")
+    except Exception as e:
+        print(f"Error: {e}")
+        exit(1)
 
 
 def main():
@@ -22,6 +28,7 @@ def main():
     args = parser.parse_args()
 
     kafka_producer_service(args.topic)
+    exit()
 
 
 if __name__ == "__main__":
