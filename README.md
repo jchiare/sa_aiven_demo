@@ -21,7 +21,7 @@ Required environmental variables
 pip install -r requirements.txt
 ```
 
-### Steps to run application
+## Steps to run application
 1. Run the producer to send one message to the Kafka service with the hostname as the key and the UTC time in JSON format 
 ```
 python producer.py -t <topic-name>
